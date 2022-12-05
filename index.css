@@ -1,0 +1,36 @@
+/*bg color, font and layout of index*/
+body {
+    background-color:  rgb(202, 234, 171);
+    font-size: 30px;
+    font-family: 'Bree Serif', serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+/*width of my header*/
+header{
+    width: 100%
+    ;
+}
+    /*layout and width of my nav*/
+nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+/* layout of my ul from my nav*/
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 100%
+}
+   
+/* layout and style of my link in my nav*/
+a{
+    text-decoration: none;
+    color: inherit;
+    justify-content: space-between;
+    align-items: center;
+
+}

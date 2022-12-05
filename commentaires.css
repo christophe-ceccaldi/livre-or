@@ -1,0 +1,40 @@
+body {
+    background-color: rgb(202, 234, 171);
+    font-family: 'Bree Serif', serif;
+}
+/*layout of my form*/
+ form{
+        display: flex;
+        flex-direction: column;
+
+    }
+  
+    
+/*layout with flex my form input (field)*/
+.mama01{
+    display: flex;
+    align-items: center;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+/*input[type=text] {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}*/
+/*#commentaires {
+    height: 150px;
+    width: 200px;
+}*/
+
+
+/*layout of values to fill*/
+label span{
+    width: 100px;
+    display: inline-block;
+
+}

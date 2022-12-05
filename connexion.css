@@ -1,0 +1,17 @@
+/* bg, font, layout of body of connexion*/
+body {
+    background-color:  rgb(202, 234, 171);
+    font-family: 'Bree Serif', serif;
+    display: flex;
+    align-items: center;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+/*layout and width of my form in connexion page*/ 
+form{
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+
+}

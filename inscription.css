@@ -1,0 +1,35 @@
+body {
+    background-color: rgb(202, 234, 171);
+    font-family: 'Bree Serif', serif;
+}
+/*layout of my form*/
+ form{
+        display: flex;
+        flex-direction: column;
+
+    }
+    
+    thead, th {
+       
+        padding: 8px;
+    
+    }
+    
+/*layout with flex my form input (field)*/
+.mama01{
+    display: flex;
+    align-items: center;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+/* width of my form*/
+form{
+    width: min-content;
+}
+/*layout of values to fill*/
+label span{
+    width: 100px;
+    display: inline-block;
+
+}
