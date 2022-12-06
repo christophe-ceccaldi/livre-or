@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['login'])) {
+if (!isset($_SESSION['id'])) {
     header("Location: http://localhost/livre-or/connexion.php");
 }
 // J'inclu la connexion à la BDD pour ne pas avoir à le faire sur toutes les pages. $conn est disponible // 
@@ -11,16 +11,16 @@ include "sqliconnect.php";
 //connexionn DB on plesk
 //$conn = new mysqli("localhost", "chris", "Nowayback13", "christophe-ceccaldi_moduleconnexion");
 
-$exlogin = $_SESSION['login'];
+$id = $_SESSION['id'];
 
 //var_dump($_POST);
 
 if (isset($_POST['submit'])){
-    $id = $user[0];
+
     $login = $_POST['login'];
     $password = $_POST['password'];
 
-    $sql = "UPDATE `utilisateurs` SET login = '$login', password = '$password' WHERE login = '$exlogin'";
+    $sql = "UPDATE `utilisateurs` SET login = '$login', password = '$password' WHERE id = '$id'";
     $updated = $conn->query($sql);
     if ($updated) {
         echo "user info has been updated";
@@ -35,12 +35,12 @@ if (isset($_POST['submit'])){
 
         //vérifier que l'utilisateur possède un login ds la DB pour savoir si user enregistrer(query pour fetch_all DB)//
         //récupérer tout dans la DB
-            $search = "SELECT * FROM utilisateurs WHERE login = '$exlogin'";
+            $search = "SELECT * FROM utilisateurs WHERE id = '$id'";
             $query = $conn->query($search);
             $user = $query->fetch_array();
         //echo '<pre>';
         //var_dump($user);
-            $id = $user[0];
+        
             $login = $user['login'];
             $password = $user['password'];
         //$comfirm_password = $user['comfirm_password'];
@@ -88,10 +88,9 @@ if (isset($_POST['submit'])){
             </label>
                 <!--input of the submit and reset button-->
                 <label>
-                    <span>Deconnexion</span>
-                 <!--<input type="reset" id="button" name='reset'/>-->
-                 <a href= "deconnexion.php">deconnexion</a>
-                 </label>
+                    <!--<span>Deconnexion</span>
+                    <a href= "deconnexion.php">deconnexion</a>
+                 </label>-->
                  <label>
                     <span>Connexion</span><br>
                  <input type="submit" id="button" name='submit'/>

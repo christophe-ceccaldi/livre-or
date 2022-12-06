@@ -1,7 +1,23 @@
 <?php
-// J'inclu la connexion à la BDD pour ne pas avoir à le faire sur toutes les pages. $conn est disponible // 
+//ouvertur de session//
+session_start();
+//pour les utilisateurs non connecté redirection vers la page connexion//
+if (!isset($_SESSION['id'])) {
+    header("Location: http://localhost/livre-or/connexion.php");
+}
+// J'inclu la connexion à la DB pour ne pas avoir à le faire sur toutes les pages. $conn est disponible // 
 
 include "sqliconnect.php";
+//création des variables pour la page commentaires//
+$usid = $_SESSION['id'];
+//$login ['login'] = $_POST['login'];
+if (isset($_POST['comments'])){
+    $ustext = $_POST['comments'];
+    $squl = "INSERT INTO 'commentaires'(commntaire, id_utilisateur, date) VALUES ('$ustext', '$usid, 'date')";
+    $updated = $conn->query($sql);
+}
+/*if($_POST['submit']){
+}*/
 
 ?>
 
@@ -16,7 +32,7 @@ include "sqliconnect.php";
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-        <title>inscriptions</title>
+        <title>commentaires</title>
   </head>
     <body class ="mama01">
 
@@ -30,10 +46,10 @@ include "sqliconnect.php";
             <label>
                 <!--<span>Votre commentaire</span>--> 
                 <!-- use of <textarea> pour champ de texte extensible à la zone de texte rempli-->            
-                <textarea type="text" id="commentaires" name='commentaires'></textarea>
+                <textarea type="text" id="comments" name='comments'value='comments'></textarea>
             </label>
                 <input type="submit" id="button" name='submit'/>
             </form>
+            <!--echo $ustxt ['commentaire']-->
     </body>
 </html>
-    

@@ -21,14 +21,16 @@ include "sqliconnect.php";
   //connexionn DB on plesk
   //$conn = new mysqli("localhost", "chris", "Nowayback13", "christophe-ceccaldi_moduleconnexion");
 
-  $sql = "SELECT `login`, `password` FROM utilisateurs WHERE `login` = '$login' AND `password` = '$password'";
+  $sql = "SELECT `id`, `login`, `password` FROM utilisateurs WHERE `login` = '$login' AND `password` = '$password'";
   $result = $conn->query($sql);
-//var_dump($result);
+  $user = $result->fetch_assoc();
+  //var_dump($result);
+  var_dump($user);
 
 
   if  ($result->num_rows > 0){
 
-  $_SESSION['login'] = $login;
+  $_SESSION['id'] = $user['id'];
   //echo $result[0];
 
     if ($login === 'admin') {
