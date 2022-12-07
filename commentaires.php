@@ -13,11 +13,11 @@ $usid = $_SESSION['id'];
 //$login ['login'] = $_POST['login'];
 if (isset($_POST['comments'])){
     $ustext = $_POST['comments'];
-    $squl = "INSERT INTO 'commentaires'(commntaire, id_utilisateur, date) VALUES ('$ustext', '$usid, 'date')";
-    $updated = $conn->query($sql);
+    $date = date('Y-m-d h:i:s');
+    $sql = "INSERT INTO `commentaires` (commentaire, id_utilisateur, date) VALUES ('$ustext', '$usid', '$date')";
+    $sentcom = $conn->query($sql);
+    //var_dump($sentcom);
 }
-/*if($_POST['submit']){
-}*/
 
 ?>
 
