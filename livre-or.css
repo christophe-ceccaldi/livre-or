@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(202, 234, 171);
+    font-family: 'Bree Serif', serif;
+}
+/*layout of my form*/
+ form{
+        display: flex;
+        flex-direction: column;
+
+    }
+  
+    
+/*layout with flex my form input (field)*/
+.mama01{
+    display: flex;
+    align-items: center;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+}
+
+table, caption, th, td {
+    border: 3px solid rgb(79, 196, 242);
+}

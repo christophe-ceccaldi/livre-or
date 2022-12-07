@@ -10,10 +10,12 @@ if (!isset($_SESSION['id'])) {
 include "sqliconnect.php";
 //création des variables pour la page commentaires//
 $usid = $_SESSION['id'];
-//$login ['login'] = $_POST['login'];
+//si tu pacours l'input comments et qu'il est vide c'est normal
 if (isset($_POST['comments'])){
+    //création variable pour ma requête
     $ustext = $_POST['comments'];
     $date = date('Y-m-d h:i:s');
+    //requéte pour récupérer commentaire  user et date et les insérer dans le tableau commentaires php myadmin//
     $sql = "INSERT INTO `commentaires` (commentaire, id_utilisateur, date) VALUES ('$ustext', '$usid', '$date')";
     $sentcom = $conn->query($sql);
     //var_dump($sentcom);
