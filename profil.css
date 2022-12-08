@@ -1,0 +1,73 @@
+/*bg color, font and layout of index*/
+body {
+    background-color:  rgb(202, 234, 171);
+    /*font-size: 30px;*/
+    font-family: 'Bree Serif', serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+/*width of my header*/
+header{
+    font-size: 30px;
+    width: 100%
+    ;
+}
+    /*layout and width of my nav*/
+nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+/* layout of my ul from my nav*/
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 100%
+}
+   
+/* layout and style of my link in my nav*/
+nav a{
+    text-decoration: none;
+    color: inherit;
+    justify-content: space-between;
+    align-items: center;
+
+}
+/*layout of my form*/
+form{
+    display: flex;
+    flex-direction: column;
+
+}
+
+thead, th {
+   
+    padding: 8px;
+
+}
+
+h2{
+    font-size: 20px;
+    
+}
+
+/*layout with flex my form input (field)*/
+.mama01{
+display: flex;
+align-items: center;
+align-content: stretch;
+flex-wrap: nowrap;
+flex-direction: column;
+}
+/* width of my form*/
+form{
+width: min-content;
+}
+/*layout of values to fill*/
+label span{
+width: 100px;
+display: inline-block;
+
+}

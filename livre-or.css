@@ -1,7 +1,59 @@
 body {
-    background-color: rgb(202, 234, 171);
+    background-color:  rgb(202, 234, 171);
     font-family: 'Bree Serif', serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
+/*width of my header*/
+header{
+    display: flex;
+    font-size: 30px;
+    width: 100%;
+}
+    /*layout and width of my nav*/
+nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+/* layout of my ul from my nav*/
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 100%
+}
+   
+/* layout and style of my link in my nav*/
+nav a{
+    text-decoration: none;
+    color: inherit;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+/*layout of my form*/
+form{
+    display: flex;
+    flex-direction: column;
+
+}
+
+thead, th {
+   
+    padding: 8px;
+
+}
+
+h2{
+    font-size: 20px;
+    
+}
+
 /*layout of my form*/
  form{
         display: flex;

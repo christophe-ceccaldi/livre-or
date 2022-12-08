@@ -9,6 +9,7 @@ body {
 }
 /*width of my header*/
 header{
+    font-size: 30px;
     width: 100%
     ;
 }
@@ -27,7 +28,7 @@ ul {
 }
    
 /* layout and style of my link in my nav*/
-a{
+nav a{
     text-decoration: none;
     color: inherit;
     justify-content: space-between;

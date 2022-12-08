@@ -25,7 +25,7 @@ include "sqliconnect.php";
   $result = $conn->query($sql);
   $user = $result->fetch_assoc();
   //var_dump($result);
-  var_dump($user);
+  //var_dump($user);
 
 
   if  ($result->num_rows > 0){
@@ -33,14 +33,8 @@ include "sqliconnect.php";
   $_SESSION['id'] = $user['id'];
   //echo $result[0];
 
-    if ($login === 'admin') {
-      //$_SESSION['admin'] = true;
-      header("Location: http:/localhost/livre-or/admin.php");
+  header("Location: http://localhost/livre-or/profil.php");
 
-    }
-    else {
-      header("Location: http://localhost/livre-or/index.php");
-    }
 
   }
 }
@@ -52,33 +46,47 @@ include "sqliconnect.php";
 
 <!DOCTYPE html>
 <html lang="FR">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="connexion.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-    <title>connexion</title>
-  </head>
-  <body>
-    <!--title of my form-->
-    <h2>connexion</h2>
-       <!--use of  label and span in the form of connexion page-->
-      <form>
-        <label>
-          <span>Login</span>             
-          <input type="text" id="login" name='login'/>
-        </label>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="connexion.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  <title>connexion</title>
+</head>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="http://localhost/livre-or/inscription.php">Inscriptions</a></li>
+        <li><a href="http://localhost/livre-or//connexion.php">Connexion</a></li>
+        <li><a href="http://localhost/livre-or//profil.php">Modifier profil</a></li>
+        <li><a href="http://localhost/livre-or//commentaires.php">Commentaires</a></li>
+        <li><a href="http://localhost/livre-or//livre-or.php">Livre d'or</a></li>
+        <li><a href="http://localhost/livre-or//deconnexion.php">Deconnexion</a></li>
+      </ul >
+        
+    </nav>
+  </header>
+  
+<body>
+  <!--title of my form-->
+  <h2>connexion</h2>
+      <!--use of  label and span in the form of connexion page-->
+    <form>
+      <label>
+        <span>Login</span>             
+        <input type="text" id="login" name='login'/>
+      </label>
 
-        <label>
-          <span>Password</span>             
-          <input type="password" id="password" name='password' minlength="3" required/>
-        </label>
-          
-          <input type="submit" id="button" name='button'/>
-      </form>
+      <label>
+        <span>Password</span>             
+        <input type="password" id="password" name='password' minlength="3" required/>
+      </label>
+        
+        <input type="submit" id="button" name='button'/>
+    </form>
           
   </body>
 </html>

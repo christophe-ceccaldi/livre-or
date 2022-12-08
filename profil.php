@@ -49,7 +49,7 @@ if (isset($_POST['submit'])){
         //$dblogin = $users[0];
         
         
-        //pour chaque utilisateurs qui possède un login autorisent les a modifier leurs profils//
+        
         
 
     }
@@ -62,12 +62,25 @@ if (isset($_POST['submit'])){
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="inscription.css">
+        <link rel="stylesheet" href="profil.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
         <title>Modifier son profil</title>
   </head>
+  <header>
+            <nav>
+                <ul>
+                    <li><a href="http://localhost/livre-or/inscription.php">Inscriptions</a></li>
+                    <li><a href="http://localhost/livre-or//connexion.php">Connexion</a></li>
+                    <li><a href="http://localhost/livre-or//profil.php">Modifier profil</a></li>
+                    <li><a href="http://localhost/livre-or//commentaires.php">Commentaires</a></li>
+                    <li><a href="http://localhost/livre-or//livre-or.php">Livre d'or</a></li>
+                    <li><a href="http://localhost/livre-or//deconnexion.php">Deconnexion</a></li>
+                </ul >
+                
+            </nav>
+  </header>
     <body class ="mama01">
 
        

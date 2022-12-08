@@ -1,7 +1,57 @@
+/*bg color, font and layout of index*/
 body {
-    background-color: rgb(202, 234, 171);
+    background-color:  rgb(202, 234, 171);
     font-family: 'Bree Serif', serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
+/*width of my header*/
+header{
+    font-size: 30px;
+    width: 100%
+    ;
+}
+    /*layout and width of my nav*/
+nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+/* layout of my ul from my nav*/
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 100%
+}
+   
+/* layout and style of my link in my nav*/
+nav a{
+    text-decoration: none;
+    color: inherit;
+    justify-content: space-between;
+    align-items: center;
+
+}
+/*layout of my form*/
+form{
+    display: flex;
+    flex-direction: column;
+
+}
+
+thead, th {
+   
+    padding: 8px;
+
+}
+
+h2{
+    font-size: 20px;
+    
+}
+
 /*layout of my form*/
  form{
         display: flex;
@@ -19,20 +69,7 @@ body {
     flex-direction: column;
 }
 
-/*input[type=text] {
-    width: 100%;
-    height: 150px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-}*/
-/*#commentaires {
-    height: 150px;
-    width: 200px;
-}*/
 
-
-/*layout of values to fill*/
 label span{
     width: 100px;
     display: inline-block;

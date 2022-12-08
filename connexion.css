@@ -2,12 +2,55 @@
 body {
     background-color:  rgb(202, 234, 171);
     font-family: 'Bree Serif', serif;
+    font-size: 20px;
     display: flex;
     align-items: center;
     align-content: stretch;
     flex-wrap: nowrap;
     flex-direction: column;
 }
+
+body {
+    background-color:  rgb(202, 234, 171);
+    /*font-size: 30px;*/
+    font-family: 'Bree Serif', serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+h2{
+    font-size: 20px;
+    
+}
+/*width of my header*/
+header{
+    font-size: 30px;
+    width: 100%
+    ;
+}
+    /*layout and width of my nav*/
+nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+/* layout of my ul from my nav*/
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 100%
+}
+   
+/* layout and style of my link in my nav*/
+nav a{
+    text-decoration: none;
+    color: inherit;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
 /*layout and width of my form in connexion page*/ 
 form{
     display: flex;

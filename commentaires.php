@@ -36,6 +36,19 @@ if (isset($_POST['comments'])){
         <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
         <title>commentaires</title>
   </head>
+  <header>
+            <nav>
+                <ul>
+                    <li><a href="http://localhost/livre-or/inscription.php">Inscriptions</a></li>
+                    <li><a href="http://localhost/livre-or//connexion.php">Connexion</a></li>
+                    <li><a href="http://localhost/livre-or//profil.php">Modifier profil</a></li>
+                    <li><a href="http://localhost/livre-or//commentaires.php">Commentaires</a></li>
+                    <li><a href="http://localhost/livre-or//livre-or.php">Livre d'or</a></li>
+                    <li><a href="http://localhost/livre-or//deconnexion.php">Deconnexion</a></li>
+                </ul >
+                
+            </nav>
+        </header>
     <body class ="mama01">
 
         

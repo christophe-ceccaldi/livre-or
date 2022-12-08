@@ -10,18 +10,14 @@ include "sqliconnect.php";
 $search = "SELECT * FROM commentaires ORDER BY `date` ASC";
 $query = $conn->query($search);
 $comments = $query->fetch_all(MYSQLI_ASSOC);
-Var_dump($comments);
-//requête id pour le tableau utilisateurs//
-//"SELECT id, login FROM `utilisateurs`";
-//$query = $conn->query($indentify);
-//$idenuser = $query->fetch_all();
-//Var_dump($idenuser);
+//Var_dump($comments);
+
 //requête pour que la colonne login du tableau utilisateur soit associer à id_utilisateur du tableau commentaires//
-// $indentify = "SELECT utilisateurs.login, commentaires.id_utilisateur FROM `utilisateurs` INNER JOIN `commentaires` ON utilisateurs.id = commentaires.id_utilisateur";
+
 $indentify = "SELECT commentaires.id_utilisateur, utilisateurs.login FROM `commentaires` INNER JOIN `utilisateurs` ON commentaires.id_utilisateur = utilisateurs.id";
 $query = $conn->query($indentify);
 $idenuser = $query->fetch_all(MYSQLI_ASSOC);
-Var_dump($idenuser);
+//Var_dump($idenuser);
 
 
 // $val = array_search('')
@@ -47,6 +43,20 @@ Var_dump($idenuser);
         <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
         <title>commentaires</title>
   </head>
+  <header>
+            <nav>
+                <ul>
+                    <li><a href="http://localhost/livre-or/inscription.php">Inscriptions</a></li>
+                    <li><a href="http://localhost/livre-or//connexion.php">Connexion</a></li>
+                    <li><a href="http://localhost/livre-or//profil.php">Modifier profil</a></li>
+                    <li><a href="http://localhost/livre-or//commentaires.php">Commentaires</a></li>
+                    <li><a href="http://localhost/livre-or//livre-or.php">Livre d'or</a></li>
+                    <li><a href="http://localhost/livre-or//deconnexion.php">Deconnexion</a></li>
+                </ul >
+                
+            </nav>
+        </header>
+
     <body class ="mama01">
 
         
