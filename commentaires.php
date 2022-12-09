@@ -1,6 +1,7 @@
 <?php
 //ouvertur de session//
 session_start();
+$login = $_SESSION['login'];
 //pour les utilisateurs non connecté redirection vers la page connexion//
 if (!isset($_SESSION['id'])) {
     header("Location: http://localhost/livre-or/connexion.php");
@@ -22,6 +23,7 @@ if (isset($_POST['comments'])){
     header("Location: http://localhost/livre-or/livre-or.php");
 }
 
+    
 ?>
 
 
@@ -50,9 +52,7 @@ if (isset($_POST['comments'])){
         </header>
     <body class ="mama01">
 
-        
-
-
+    <?php echo "$login écrivez votre commentaire"?>
         <h2>Commentaires</h2>
        <!--champs à remplir dans le formulaire pour commentaires user avec post pour récupérer les infos-->
         <form method="post">

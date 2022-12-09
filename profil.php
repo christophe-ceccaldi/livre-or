@@ -1,5 +1,6 @@
 <?php
 session_start();
+$login = $_SESSION['login'];
 
 if (!isset($_SESSION['id'])) {
     header("Location: http://localhost/livre-or/connexion.php");
@@ -85,6 +86,7 @@ if (isset($_POST['submit'])){
 
        <!--title uper of my form to midified user-->
         <h2>Modifier son profil</h2>
+        <?php echo "$login vous pouvez modifier votre profil"?>
         <!--champs à remplir dans le formulaire pour modofoer son profil user avec post pour récupérer les infos-->
         <form method="post">
             <!--used of php in my input to field data of users who wa register in the DB yet-->     

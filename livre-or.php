@@ -2,7 +2,7 @@
 
 //ouvertur de session//
 session_start();
-
+$login = $_SESSION['login'];
 // J'inclu la connexion à la DB pour ne pas avoir à le faire sur toutes les pages $conn est disponible // 
 
 include "sqliconnect.php";
@@ -60,6 +60,7 @@ $idenuser = $query->fetch_all(MYSQLI_ASSOC);
 
 
         <h2>Livre d'or</h2>
+        <?php echo "$login lisez le livre d'or ou cliquez sur commentaires pour laisser un autre commentaire"?>
        <!--champs à remplir dans le formulaire livre d'or date user  commentaire avec post pour récupérer les infos-->
         <form method="post">
             <table>

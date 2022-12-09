@@ -29,7 +29,7 @@ include "sqliconnect.php";
 
 
   if  ($result->num_rows > 0){
-
+  $_SESSION ['login'] = $login;
   $_SESSION['id'] = $user['id'];
   //echo $result[0];
 
