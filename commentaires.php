@@ -19,6 +19,7 @@ if (isset($_POST['comments'])){
     $sql = "INSERT INTO `commentaires` (commentaire, id_utilisateur, date) VALUES ('$ustext', '$usid', '$date')";
     $sentcom = $conn->query($sql);
     //var_dump($sentcom);
+    header("Location: http://localhost/livre-or/livre-or.php");
 }
 
 ?>
@@ -39,8 +40,6 @@ if (isset($_POST['comments'])){
   <header>
             <nav>
                 <ul>
-                    <li><a href="http://localhost/livre-or/inscription.php">Inscriptions</a></li>
-                    <li><a href="http://localhost/livre-or//connexion.php">Connexion</a></li>
                     <li><a href="http://localhost/livre-or//profil.php">Modifier profil</a></li>
                     <li><a href="http://localhost/livre-or//commentaires.php">Commentaires</a></li>
                     <li><a href="http://localhost/livre-or//livre-or.php">Livre d'or</a></li>
@@ -65,6 +64,5 @@ if (isset($_POST['comments'])){
             </label>
                 <input type="submit" id="button" name='submit'/>
             </form>
-            <!--echo $ustxt ['commentaire']-->
     </body>
 </html>

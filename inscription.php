@@ -2,7 +2,7 @@
 // J'inclu la connexion à la BDD pour ne pas avoir à le faire sur toutes les pages. $conn est disponible // 
 
 include('sqliconnect.php');
-$login = $_POST['login'];
+//$login = $_POST['login'];
 //requête pour tout sélectionner dans la DB// 
  
  // $users = $query->fetch_all();
@@ -31,14 +31,14 @@ $login = $_POST['login'];
 
 
                 echo 'vous etes bien enregistré';
-                } else echo 'ce login n\'est disponible';
+                } else echo 'ce login n\'est pas disponible';
             
                 //echo 'coucou';
 
-            } else echo "motd de passe différent";
+            } else echo "mot de passe différent";
         } //else echo 'echec';  
 
-
+        header("Location: http://localhost/livre-or/connexion.php");
 
 
    }       /*   
@@ -106,10 +106,7 @@ $login = $_POST['login'];
             <ul>
                 <li><a href="http://localhost/livre-or/inscription.php">Inscriptions</a></li>
                 <li><a href="http://localhost/livre-or//connexion.php">Connexion</a></li>
-                <li><a href="http://localhost/livre-or//profil.php">Modifier profil</a></li>
-                <li><a href="http://localhost/livre-or//commentaires.php">Commentaires</a></li>
                 <li><a href="http://localhost/livre-or//livre-or.php">Livre d'or</a></li>
-                <li><a href="http://localhost/livre-or//deconnexion.php">Deconnexion</a></li>
             </ul >
             
         </nav>
