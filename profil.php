@@ -84,30 +84,35 @@ if (isset($_POST['submit'])){
 
        
 
-       <!--title uper of my form to midified user-->
-        <h2>Modifier son profil</h2>
-        <?php echo "$login vous pouvez modifier votre profil"?>
-        <!--champs à remplir dans le formulaire pour modofoer son profil user avec post pour récupérer les infos-->
-        <form method="post">
-            <!--used of php in my input to field data of users who wa register in the DB yet-->     
+    <!--title uper of my form to midified user-->
+    <h2>Modifier son profil</h2>
+    <?php echo "$login vous pouvez modifier votre profil"?>
+    <!--champs à remplir dans le formulaire pour modofoer son profil user avec post pour récupérer les infos-->
+    <form method="post">
+        <!--used of php in my input to field data of users who wa register in the DB yet-->     
+        <label>
+            <span>Login</span>
+            <input type="text" id="login" name='login' value="<?php echo $login?>"/>
+        </label>
+        <!--used of php in my input to field data of users who wa register in the DB yet-->
+        <label>
+            <span>Password</span>
+            <input type="password" id="password" name='password' minlength="3" required value ="<?php echo $password ?>"/>
+        </label>
+            <!--input of the submit and reset button-->
             <label>
-                <span>Login</span>
-                <input type="text" id="login" name='login' value="<?php echo $login?>"/>
-            </label>
-            <!--used of php in my input to field data of users who wa register in the DB yet-->
-            <label>
-                <span>Password</span>
-                <input type="password" id="password" name='password' minlength="3" required value ="<?php echo $password ?>"/>
-            </label>
-                <!--input of the submit and reset button-->
+                <!--<span>Deconnexion</span>
+                <a href= "deconnexion.php">deconnexion</a>
+                </label>-->
                 <label>
-                    <!--<span>Deconnexion</span>
-                    <a href= "deconnexion.php">deconnexion</a>
-                 </label>-->
-                 <label>
-                    <span>Connexion</span><br>
-                 <input type="submit" id="button" name='submit'/>
-                 </label>
-            </form>
+                <span>Connexion</span><br>
+                <input type="submit" id="button" name='submit'/>
+                </label>
+        </form>
+        <footer>
+            <?php
+            include('footer.php')
+            ?>
+         </footer>   
     </body>
 </html>

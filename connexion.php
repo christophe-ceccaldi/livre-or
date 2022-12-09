@@ -59,6 +59,7 @@ include "sqliconnect.php";
   <header>
     <nav>
       <ul>
+        <li><a href="http://localhost/livre-or/inscription.php">Inscriptions</a></li>
         <li><a href="http://localhost/livre-or//commentaires.php">Commentaires</a></li>
         <li><a href="http://localhost/livre-or//livre-or.php">Livre d'or</a></li>
       </ul >
@@ -83,6 +84,10 @@ include "sqliconnect.php";
         
         <input type="submit" id="button" name='button'/>
     </form>
-          
+    <footer>
+      <?php
+      include('footer.php')
+      ?>
+    </footer>         
   </body>
 </html>

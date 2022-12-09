@@ -1,24 +1,28 @@
 <?php
 
-//ouvertur de session//
-session_start();
+//ouverture de session//
+/*session_start();
+if (isset($_SESSION['login'])){
+
 $login = $_SESSION['login'];
+echo "$login lisez le livre d'or ou cliquez sur commentaires pour laisser un autre commentaire";
+}*/
 // J'inclu la connexion à la DB pour ne pas avoir à le faire sur toutes les pages $conn est disponible // 
 
 include "sqliconnect.php";
 //requête pour le tableau commentaires//
-$search = "SELECT * FROM commentaires ORDER BY `date` ASC";
-$query = $conn->query($search);
-$comments = $query->fetch_all(MYSQLI_ASSOC);
+//$search = "SELECT * FROM commentaires ORDER BY `date` ASC";
+//$query = $conn->query($search);
+//$comments = $query->fetch_all(MYSQLI_ASSOC);
 //Var_dump($comments);
 
 //requête pour que la colonne login du tableau utilisateur soit associer à id_utilisateur du tableau commentaires//
 
-$indentify = "SELECT commentaires.id_utilisateur, utilisateurs.login FROM `commentaires` INNER JOIN `utilisateurs` ON commentaires.id_utilisateur = utilisateurs.id";
+$indentify = "SELECT commentaire, login, date FROM `commentaires` INNER JOIN `utilisateurs` ON commentaires.id_utilisateur = utilisateurs.id ORDER BY date DESC";
 $query = $conn->query($indentify);
-$idenuser = $query->fetch_all(MYSQLI_ASSOC);
-//Var_dump($idenuser);
-
+//var_dump($query);
+$idenuser = $query->fetch_all();
+//var_dump($idenuser);
 
 // $val = array_search('')
 
@@ -60,34 +64,39 @@ $idenuser = $query->fetch_all(MYSQLI_ASSOC);
 
 
         <h2>Livre d'or</h2>
-        <?php echo "$login lisez le livre d'or ou cliquez sur commentaires pour laisser un autre commentaire"?>
+        <?php echo "lisez le livre d'or, si vous déjà êtes connecté cliquez sur commentaires pour laisser un autre commentaire";?>
+       
        <!--champs à remplir dans le formulaire livre d'or date user  commentaire avec post pour récupérer les infos-->
         <form method="post">
             <table>
     
-                <caption> Vos commentaires dans le livre d'or</caption>
+            <caption>Vos commentaires dans le livre d'or</caption>
 
-                <tr> <th>Posté le</th> <th>Utilisateurs</th> <th>Commentaires</th> </tr>
+                <tr> <th>Commentaires</th> <th>Utilisateurs</th> <th>Posté le</th> </tr>
             <!--php dans le html-->
             <?php 
                 //pour chaque élément du tableau commentaires puis création des variables//
-                foreach ($comments as $comment) {
-                    $date = $comment['date'];
-                    $id_user = $comment['id_utilisateur'];
-                    $comment = $comment['commentaire'];
+                foreach ($idenuser as $comment) {
+                    $commentaire = $comment[0];
+                    $id_user = $comment[1];
+                    $date = $comment[2];
+                   
+                    
                     // création de la variable pour récupérer la query des 2 tableaux//
-                    $filter = array_column($idenuser, 'login', 'id_utilisateur');
+                    //$filter = array_column($idenuser, 'login', 'id_utilisateur');
                     // Variable pour utiliser le login et l'afficher//
-                    $login = $filter[$id_user];
+                    //$login = $filter[$id_user];
 
                     //affichage de mes variables dans mon tableaux du livre d'or//
 
                     echo "
                     
                         <tr>
-                            <td>$date</td> 
-                            <td>$login</td> 
-                            <td>$comment</td> 
+                            <td>$comment[0]</td>
+                            <td>$comment[1]</td> 
+                            <td>$comment[2]</td> 
+                            
+                             
                         </tr>
                 
                     ";

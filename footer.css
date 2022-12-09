@@ -1,0 +1,21 @@
+body {
+    background-color:  rgb(202, 234, 171);
+    font-family: 'Bree Serif', serif;
+    display: flex;
+    align-items: center;
+
+
+
+}
+
+
+img {
+    height: 40px;
+    width: 40px;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+}
+

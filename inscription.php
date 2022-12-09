@@ -21,6 +21,8 @@ include('sqliconnect.php');
                 $comfirm_password = $_POST["comfirm_password"];
 
         if (isset($login) && isset($password) && isset($comfirm_password)){
+
+
             if ($password == $comfirm_password){
             $search = "SELECT * FROM `utilisateurs` WHERE login='$login'";
             $query = $conn->query($search);
@@ -29,6 +31,8 @@ include('sqliconnect.php');
 
                 $sql = $conn->query("INSERT INTO `utilisateurs` (login, password) VALUES('$login', '$password')");
 
+                       header("Location: connexion.php");
+
 
                 echo 'vous etes bien enregistré';
                 } else echo 'ce login n\'est pas disponible';
@@ -36,9 +40,8 @@ include('sqliconnect.php');
                 //echo 'coucou';
 
             } else echo "mot de passe différent";
-        } //else echo 'echec';  
+        } else echo 'echec';  
 
-        header("Location: http://localhost/livre-or/connexion.php");
 
 
    }       /*   
@@ -136,6 +139,11 @@ include('sqliconnect.php');
             </label>
                 <input type="submit" id="button" name='submit'/>
             </form>
+            <footer>
+            <?php
+            include('footer.php')
+            ?>
+         </footer>   
     </body>
 </html>
     
