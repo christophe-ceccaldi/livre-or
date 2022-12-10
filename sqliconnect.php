@@ -1,7 +1,9 @@
 <?php
-//connexion en local host//
+
+ //connexionn DB on plesk
 try{
-    $conn = mysqli_connect("localhost", "root", "", "livreor");
+    $conn = new mysqli("localhost", "christophe", "goldeneyes/13", "christophe-ceccaldi_livreor");
+ 
 }
 catch(Exception $e) {
     echo $e->getMessage();

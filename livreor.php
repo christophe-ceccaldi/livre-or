@@ -2,7 +2,7 @@
 
 // J'inclu la connexion à la DB pour ne pas avoir à le faire sur toutes les pages $conn est disponible // 
 
-include "sqliconnect.php";
+require "sqliconnect.php";
 
 //requête pour que la colonne login du tableau utilisateur soit associer à id_utilisateur du tableau commentaires//
 
@@ -21,7 +21,7 @@ $idenuser = $query->fetch_all();
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="livre-or.css">
+        <link rel="stylesheet" href="livreor.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
@@ -31,9 +31,9 @@ $idenuser = $query->fetch_all();
             <!--links to be redirected in my nav-->
             <nav>
                 <ul>
-                    <li><a href="http://localhost/livre-or//commentaires.php">Commentaires</a></li>
-                    <li><a href="http://localhost/livre-or//livre-or.php">Livre d'or</a></li>
-                    <li><a href="http://localhost/livre-or//deconnexion.php">Deconnexion</a></li>
+                    <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/commentaires.php">Commentaires</a></li>
+                    <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/livreor.php">Livre d'or</a></li>
+                    <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/deconnexion.php">Deconnexion</a></li>
                 </ul >
                 
             </nav>
@@ -45,7 +45,7 @@ $idenuser = $query->fetch_all();
 
 
         <h2>Livre d'or</h2>
-        <?php echo "lisez le livre d'or, si vous déjà êtes connecté cliquez sur commentaires pour laisser un autre commentaire";?>
+        <?php echo "lisez le livre d'or, si vous  êtes déjà connecté cliquez sur commentaires pour laisser un autre commentaire";?>
        
        <!--champs à remplir dans le formulaire livre d'or date user commentaire avec post pour récupérer les infos-->
         <form method="post">

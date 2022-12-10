@@ -16,7 +16,7 @@ if ($validuser) {
 
 // J'inclu la connexion à la BD pour ne pas avoir à le faire sur toutes les pages $conn est disponible // 
 
-include "sqliconnect.php";
+require "sqliconnect.php";
 
   //connexionn DB on plesk
   //$conn = new mysqli("localhost", "chris", "Nowayback13", "christophe-ceccaldi_moduleconnexion");
@@ -32,7 +32,7 @@ include "sqliconnect.php";
   $_SESSION['id'] = $user['id'];
   //echo $result[0];
 
-  header("Location: http://localhost/livre-or/commentaires.php");
+  header("Location: https://christophe-ceccaldi.students-laplateforme.io/livre-or/commentaires.php");
 
 
   }
@@ -56,9 +56,9 @@ include "sqliconnect.php";
   <header>
     <nav>
       <ul>
-        <li><a href="http://localhost/livre-or/inscription.php">Inscriptions</a></li>
-        <li><a href="http://localhost/livre-or//commentaires.php">Commentaires</a></li>
-        <li><a href="http://localhost/livre-or//livre-or.php">Livre d'or</a></li>
+        <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/inscription.php">Inscriptions</a></li>
+        <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/commentaires.php">Commentaires</a></li>
+        <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/livreor.php">Livre d'or</a></li>
       </ul >
         
     </nav>
@@ -84,7 +84,7 @@ include "sqliconnect.php";
     <footer>
       <!--include footer in my page-->
       <?php
-      include('footer.php')
+      require "footer.php";
       ?>
     </footer>         
   </body>

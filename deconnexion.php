@@ -3,6 +3,6 @@
 
 session_start();
 session_destroy();
-header("Location:connexion.php");
+header("Location: https://christophe-ceccaldi.students-laplateforme.io/livre-or/connexion.php");
 
 ?>

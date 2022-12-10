@@ -4,23 +4,23 @@ session_start();
 $login = $_SESSION['login'];
 //pour les utilisateurs non connecté redirection vers la page connexion//
 if (!isset($_SESSION['id'])) {
-    header("Location: http://localhost/livre-or/connexion.php");
+    header("Location: https://christophe-ceccaldi.students-laplateforme.io/livre-or/connexion.php");
 }
 // J'inclu la connexion à la DB pour ne pas avoir à le faire sur toutes les pages. $conn est disponible // 
 
-include "sqliconnect.php";
+require "sqliconnect.php";
 //création des variables pour la page commentaires//
 $usid = $_SESSION['id'];
 //si tu pacours l'input comments et qu'il est vide c'est normal//
 if (isset($_POST['comments'])){
     //création variable pour ma requête
     $ustext = $_POST['comments'];
-    $date = date('Y-m-d h:i:s');
+    $date = date('Y-m-d H:i:s');
     //requéte pour récupérer commentaire  user et date et les insérer dans le tableau commentaires de ma BD//
     $sql = "INSERT INTO `commentaires` (commentaire, id_utilisateur, date) VALUES ('$ustext', '$usid', '$date')";
     $sentcom = $conn->query($sql);
     //when comment is ok redirection on livre or page//
-    header("Location: http://localhost/livre-or/livre-or.php");
+    header("Location: https://christophe-ceccaldi.students-laplateforme.io/livre-or/livreor.php");
 }
 
     
@@ -43,10 +43,10 @@ if (isset($_POST['comments'])){
             <nav>
                 <!--links to be redirected in my nav-->
                 <ul>
-                    <li><a href="http://localhost/livre-or//profil.php">Modifier profil</a></li>
-                    <li><a href="http://localhost/livre-or//commentaires.php">Commentaires</a></li>
-                    <li><a href="http://localhost/livre-or//livre-or.php">Livre d'or</a></li>
-                    <li><a href="http://localhost/livre-or//deconnexion.php">Deconnexion</a></li>
+                    <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/profil.php">Modifier profil</a></li>
+                    <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/commentaires.php">Commentaires</a></li>
+                    <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/livreor.php">Livre d'or</a></li>
+                    <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/deconnexion.php">Deconnexion</a></li>
                 </ul >
                 
             </nav>

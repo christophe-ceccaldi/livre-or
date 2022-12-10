@@ -1,7 +1,7 @@
 <?php
 // J'inclu la connexion à la BDD pour ne pas avoir à le faire sur toutes les pages. $conn est disponible // 
 
-include('sqliconnect.php');
+require "sqliconnect.php";
 
   //appuyer sur le bouton envoyer//
    if (isset($_POST['submit'])){ 
@@ -22,7 +22,7 @@ include('sqliconnect.php');
                 //request to send information in the DB//
                 $sql = $conn->query("INSERT INTO `utilisateurs` (login, password) VALUES('$login', '$password')");
 
-                       header("Location: connexion.php");
+                       header("Location: https://christophe-ceccaldi.students-laplateforme.io/livre-or/connexion.php");
 
                 //message about comfimation or else if the login is not good or password not ok//
                 echo 'vous etes bien enregistré';
@@ -58,9 +58,9 @@ include('sqliconnect.php');
         <!--links to be redirected in my nav-->
         <nav>
             <ul>
-                <li><a href="http://localhost/livre-or/inscription.php">Inscriptions</a></li>
-                <li><a href="http://localhost/livre-or//connexion.php">Connexion</a></li>
-                <li><a href="http://localhost/livre-or//livre-or.php">Livre d'or</a></li>
+                <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/inscription.php">Inscriptions</a></li>
+                <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/connexion.php">Connexion</a></li>
+                <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/livreor.php">Livre d'or</a></li>
             </ul >
             
         </nav>
@@ -93,7 +93,7 @@ include('sqliconnect.php');
             <footer>
                 <!--include footer in my page-->
             <?php
-            include('footer.php')
+            require "footer.php";
             ?>
          </footer>   
     </body>

@@ -15,12 +15,12 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="http://localhost/livre-or/inscription.php">Inscriptions</a></li>
-                    <li><a href="http://localhost/livre-or//connexion.php">Connexion</a></li>
-                    <li><a href="http://localhost/livre-or//profil.php">Modifier profil</a></li>
-                    <li><a href="http://localhost/livre-or//commentaires.php">Commentaires</a></li>
-                    <li><a href="http://localhost/livre-or//livre-or.php">Livre d'or</a></li>
-                    <li><a href="http://localhost/livre-or//deconnexion.php">Deconnexion</a></li>
+                    <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/inscription.php">Inscriptions</a></li>
+                    <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/connexion.php">Connexion</a></li>
+                    <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/profil.php">Modifier profil</a></li>
+                    <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/commentaires.php">Commentaires</a></li>
+                    <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/livreor.php">Livre d'or</a></li>
+                    <li><a href="https://christophe-ceccaldi.students-laplateforme.io/livre-or/deconnexion.php">Deconnexion</a></li>
                 </ul >
                 
             </nav>
@@ -28,7 +28,7 @@
         <!--pour inclure le footer avec liens github-->
          <footer>
             <?php
-            include('footer.php')
+            require "footer.php";
             ?>
          </footer>   
                 

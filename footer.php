@@ -12,7 +12,7 @@
     </head>
     <body>
         <footer>
-            <img src="logo github alpha"><a href= https://github.com/christophe-ceccaldi/livre-or>Git</a>
+        <img src="logogithubalpha.png"><a href= https://github.com/christophe-ceccaldi/livre-or>Git</a>
         </footer>
     </body>
 </html>
