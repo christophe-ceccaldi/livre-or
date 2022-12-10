@@ -1,32 +1,31 @@
 <?php
+//ouverture de session//
 session_start();
-//$_SESSION['admin'] = false;
-//$_SESSION['loggedIn'] = false;
 
+//if conditions are ok so it's valid user//
 $validuser = false;
 if (isset($_GET["login"]) && isset($_GET["password"])) {
   $validuser = true;
 }
 
-//var_dump($_GET);
 
+//if he's valid creation of variable for retrrive info from input//
 if ($validuser) {
   $login = $_GET["login"];
   $password = $_GET["password"];
 
-// J'inclu la connexion à la BDD pour ne pas avoir à le faire sur toutes les pages. $conn est disponible // 
+// J'inclu la connexion à la BD pour ne pas avoir à le faire sur toutes les pages $conn est disponible // 
 
 include "sqliconnect.php";
 
   //connexionn DB on plesk
   //$conn = new mysqli("localhost", "chris", "Nowayback13", "christophe-ceccaldi_moduleconnexion");
 
+  //request for to back information in my BD//
   $sql = "SELECT `id`, `login`, `password` FROM utilisateurs WHERE `login` = '$login' AND `password` = '$password'";
   $result = $conn->query($sql);
   $user = $result->fetch_assoc();
-  //var_dump($result);
-  //var_dump($user);
-
+ 
 
   if  ($result->num_rows > 0){
   $_SESSION ['login'] = $login;
@@ -38,9 +37,7 @@ include "sqliconnect.php";
 
   }
 }
-/*else {
-  echo "user is not valid";
-}*/
+
 ?>
 
 
@@ -85,6 +82,7 @@ include "sqliconnect.php";
         <input type="submit" id="button" name='button'/>
     </form>
     <footer>
+      <!--include footer in my page-->
       <?php
       include('footer.php')
       ?>

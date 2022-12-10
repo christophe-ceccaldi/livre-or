@@ -1,7 +1,8 @@
 <?php
+//open the session//
 session_start();
 $login = $_SESSION['login'];
-
+//if is not a valid seesion go to connection page//
 if (!isset($_SESSION['id'])) {
     header("Location: http://localhost/livre-or/connexion.php");
 }
@@ -12,46 +13,37 @@ include "sqliconnect.php";
 //connexionn DB on plesk
 //$conn = new mysqli("localhost", "chris", "Nowayback13", "christophe-ceccaldi_moduleconnexion");
 
+//création of variable about the session
 $id = $_SESSION['id'];
 
-//var_dump($_POST);
-
+//if submit button is use//
 if (isset($_POST['submit'])){
-
+    //creation variable //
     $login = $_POST['login'];
     $password = $_POST['password'];
-
+    //request to update new changes abour profile//
     $sql = "UPDATE `utilisateurs` SET login = '$login', password = '$password' WHERE id = '$id'";
     $updated = $conn->query($sql);
+    //if changes are done are ok message ok// 
     if ($updated) {
         echo "user info has been updated";
+      //else message wrong//  
     } else {
         echo "user info could not be updated";
     }
-    //var_dump($result);
+    
 }
     else
     {
-    
-
-        //vérifier que l'utilisateur possède un login ds la DB pour savoir si user enregistrer(query pour fetch_all DB)//
-        //récupérer tout dans la DB
+         //vérifier que l'utilisateur possède un login ds la DB pour savoir si user enregistrer(query pour fetch_array DB)//
+        //récupérer tout dans la DB//
             $search = "SELECT * FROM utilisateurs WHERE id = '$id'";
             $query = $conn->query($search);
             $user = $query->fetch_array();
-        //echo '<pre>';
-        //var_dump($user);
-        
+            //création variable//
             $login = $user['login'];
             $password = $user['password'];
-        //$comfirm_password = $user['comfirm_password'];
-        //echo '</pre>';
-        //création variable validusser//
-        //$dblogin = $users[0];
-        
-        
-        
-        
+             
 
     }
 
@@ -70,6 +62,7 @@ if (isset($_POST['submit'])){
         <title>Modifier son profil</title>
   </head>
   <header>
+        <!--links to be redirected in my nav-->
             <nav>
                 <ul>
                     <li><a href="http://localhost/livre-or//profil.php">Modifier profil</a></li>
@@ -109,6 +102,7 @@ if (isset($_POST['submit'])){
                 <input type="submit" id="button" name='submit'/>
                 </label>
         </form>
+        <!--include footer in my page-->
         <footer>
             <?php
             include('footer.php')

@@ -1,5 +1,5 @@
 <?php
-//ouvertur de session//
+//ouverture de session//
 session_start();
 $login = $_SESSION['login'];
 //pour les utilisateurs non connecté redirection vers la page connexion//
@@ -11,15 +11,15 @@ if (!isset($_SESSION['id'])) {
 include "sqliconnect.php";
 //création des variables pour la page commentaires//
 $usid = $_SESSION['id'];
-//si tu pacours l'input comments et qu'il est vide c'est normal
+//si tu pacours l'input comments et qu'il est vide c'est normal//
 if (isset($_POST['comments'])){
     //création variable pour ma requête
     $ustext = $_POST['comments'];
     $date = date('Y-m-d h:i:s');
-    //requéte pour récupérer commentaire  user et date et les insérer dans le tableau commentaires php myadmin//
+    //requéte pour récupérer commentaire  user et date et les insérer dans le tableau commentaires de ma BD//
     $sql = "INSERT INTO `commentaires` (commentaire, id_utilisateur, date) VALUES ('$ustext', '$usid', '$date')";
     $sentcom = $conn->query($sql);
-    //var_dump($sentcom);
+    //when comment is ok redirection on livre or page//
     header("Location: http://localhost/livre-or/livre-or.php");
 }
 
@@ -41,6 +41,7 @@ if (isset($_POST['comments'])){
   </head>
   <header>
             <nav>
+                <!--links to be redirected in my nav-->
                 <ul>
                     <li><a href="http://localhost/livre-or//profil.php">Modifier profil</a></li>
                     <li><a href="http://localhost/livre-or//commentaires.php">Commentaires</a></li>
@@ -51,7 +52,7 @@ if (isset($_POST['comments'])){
             </nav>
         </header>
     <body class ="mama01">
-
+    <!--php in html to display message with name of the user-->
     <?php echo "$login écrivez votre commentaire"?>
         <h2>Commentaires</h2>
        <!--champs à remplir dans le formulaire pour commentaires user avec post pour récupérer les infos-->

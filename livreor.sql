@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 09 déc. 2022 à 17:33
+-- Généré le : sam. 10 déc. 2022 à 08:03
 -- Version du serveur : 10.6.5-MariaDB
 -- Version de PHP : 7.4.26
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `commentaires` (
   `id_utilisateur` int(11) NOT NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `commentaires`
@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS `commentaires` (
 INSERT INTO `commentaires` (`id`, `commentaire`, `id_utilisateur`, `date`) VALUES
 (6, 'hell is my heaven !', 8, '2022-12-07 04:19:36'),
 (7, 'nuts nuts nuts', 9, '2022-12-07 04:59:43'),
+(26, 'still on it', 22, '2022-12-10 08:02:03'),
 (5, 'dave comment 01', 6, '2022-12-07 01:23:12'),
 (21, 'noisette', 9, '2022-12-09 04:03:36'),
 (25, 'follow me', 18, '2022-12-09 05:31:50'),
@@ -62,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `login` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `utilisateurs`
@@ -83,7 +84,8 @@ INSERT INTO `utilisateurs` (`id`, `login`, `password`) VALUES
 (17, 'abrham', 'mate'),
 (19, 'momo', 'momo'),
 (20, 'christophe-ceccaldi', '321'),
-(21, 'aphex', 'twin');
+(21, 'aphex', 'twin'),
+(22, 'saturday', 'night');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

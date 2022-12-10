@@ -2,38 +2,29 @@
 // J'inclu la connexion à la BDD pour ne pas avoir à le faire sur toutes les pages. $conn est disponible // 
 
 include('sqliconnect.php');
-//$login = $_POST['login'];
-//requête pour tout sélectionner dans la DB// 
- 
- // $users = $query->fetch_all();
-   //echo '<pre>';
-    //var_dump($users);
-    //echo '</pre>';
 
-     
-  //créer les conditions pour remplir les champs
-    //appuyer sur le bouton envoyer//
+  //appuyer sur le bouton envoyer//
    if (isset($_POST['submit'])){ 
                 //création variable
 
                 $login = $_POST['login'];
                 $password = $_POST['password'];
                 $comfirm_password = $_POST["comfirm_password"];
-
+        //si les champs son rmpli normalement//
         if (isset($login) && isset($password) && isset($comfirm_password)){
 
-
+            //si les deux champ password son identique//
             if ($password == $comfirm_password){
             $search = "SELECT * FROM `utilisateurs` WHERE login='$login'";
             $query = $conn->query($search);
             $verif = mysqli_num_rows($query);
             if ($verif === 0){
-
+                //request to send information in the DB//
                 $sql = $conn->query("INSERT INTO `utilisateurs` (login, password) VALUES('$login', '$password')");
 
                        header("Location: connexion.php");
 
-
+                //message about comfimation or else if the login is not good or password not ok//
                 echo 'vous etes bien enregistré';
                 } else echo 'ce login n\'est pas disponible';
             
@@ -44,48 +35,7 @@ include('sqliconnect.php');
 
 
 
-   }       /*   
-            //création variale pour même utilisateur et pour utilisateur valide//
-            $mmuser = false;
-            $validuser = false;
-            // vérifier pour chaque utilisateurs ajouter que le login et le mot de passe n'existe pas//
-            foreach ($users as $user){
-                $dbLogin = $user[1];
-                $dbpassword = $user[2];
-                if (isset($_POST['login']) && ($dbLogin == $_POST['login'])){
-                    $mmuser = true; 
-                }
-            }
-            //Vérifie si tout les champs sont remplie alors c'est un utilisateur valide// 
-            if (isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["comfirm_password"])) {
-                $validuser = true;
-            }
-
-
-        
-            
-            //si l'utilisateur est différent d'un utilisateur déja existant//
-            if($validuser && !$mmuser){
-               
-
-                //puisques toute les conditions sont remplie alors insère les données dans la DB du nouvel utilisateur//
-                $sql = "INSERT INTO `utilisateurs` (login, password) VALUES('$login', '$password')";
-
-
-                if ($conn->query($sql) === TRUE) {
-                    echo "les nouveaux enregistrements ajoutés avec succés";
-                    //header("Location: connexion.php");
-                    die();
-                } else {
-                    echo "Erreur: " . $sql . "
-                " . $conn->error;
-            
-                }
-
-        
-    }
-        $conn->close();
- */       
+   }       
 
 ?>
 
@@ -105,6 +55,7 @@ include('sqliconnect.php');
         <title>inscriptions</title>
     </head>
     <header>
+        <!--links to be redirected in my nav-->
         <nav>
             <ul>
                 <li><a href="http://localhost/livre-or/inscription.php">Inscriptions</a></li>
@@ -140,6 +91,7 @@ include('sqliconnect.php');
                 <input type="submit" id="button" name='submit'/>
             </form>
             <footer>
+                <!--include footer in my page-->
             <?php
             include('footer.php')
             ?>

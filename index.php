@@ -25,6 +25,7 @@
                 
             </nav>
         </header>
+        <!--pour inclure le footer avec liens github-->
          <footer>
             <?php
             include('footer.php')
