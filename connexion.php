@@ -9,7 +9,7 @@ if (isset($_GET["login"]) && isset($_GET["password"])) {
 }
 
 
-//if he's valid creation of variable for retrrive info from input//
+//if he's valid creation of variable for retrive info from input//
 if ($validuser) {
   $login = $_GET["login"];
   $password = $_GET["password"];
