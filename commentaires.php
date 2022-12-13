@@ -14,7 +14,8 @@ $usid = $_SESSION['id'];
 //si tu pacours l'input comments et qu'il est vide c'est normal//
 if (isset($_POST['comments'])){
     //création variable pour ma requête
-    $ustext = htmlspecialchars($_POST['comments']);
+    $ustext = htmlspecialchars($_POST['comments'], ENT_QUOTES);
+    // allows to add special characters such as the apostrophe in the db
     $date = date('Y-m-d H:i:s');
     //requéte pour récupérer commentaire  user et date et les insérer dans le tableau commentaires de ma BD//
     $sql = "INSERT INTO `commentaires` (commentaire, id_utilisateur, date) VALUES ('$ustext', '$usid', '$date')";
